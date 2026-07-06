@@ -1,0 +1,17 @@
+name: Keep Render App Alive
+
+on:
+  schedule:
+    # รันทุก ๆ 10 นาที (Render ฟรีจะหลับหลังจาก 15 นาทีที่ไม่มีทราฟฟิก)
+    - cron: '*/10 * * * *'
+  # เพิ่มปุ่มให้สามารถกดสั่งรันเองแบบ Manual จากหน้า GitHub ได้ด้วย
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Ping Request to Render
+        run: |
+          # ⚠️ ให้เปลี่ยนตรงนี้เป็น URL จริงของหน้าเว็บคุณบน Render
+          curl -I https://mini-tour-kpp.onrender.com
