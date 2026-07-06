@@ -14,4 +14,6 @@ jobs:
       - name: Send Ping Request to Render
         run: |
           # ⚠️ ให้เปลี่ยนตรงนี้เป็น URL จริงของหน้าเว็บคุณบน Render
-          curl -I https://mini-tour-kpp.onrender.com
+          curl -I https://updatemap.onrender.com
+
+
